@@ -9,7 +9,7 @@ function App() {
   const [formattedData, setFormattedData] = useState('');
 
   useEffect(() => {
-    axios.get("http://mitveszunk.click:5000/recipes")
+    axios.get("http://127.0.0.1:5000/recipes")
       .then(res => {
         console.log(res.data)
         setData(res.data);
@@ -35,7 +35,7 @@ function App() {
       recipe_ids: selectedRecipeIds
     };
 
-    axios.post("http://mitveszunk.click:5000/recipe-aggregator", requestBody)
+    axios.post("http://127.0.0.1:5000/recipe-aggregator", requestBody)
       .then(res => {
         console.log("POST response:", res.data);
         // Update the state with the formatted data
